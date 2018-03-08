@@ -1,0 +1,40 @@
+.is-roadmap
+  .timeline
+    .timeline-item
+      &::before
+        width: 0
+      &:nth-of-type(2n+1)
+        &::before
+          width: 0
+      &:nth-of-type(2n)
+        flex-direction: row-reverse
+        p
+          text-align: right
+      padding: 0
+      &::before
+        border: 0
+      .timeline-marker
+        position: relative
+        height: auto
+        width: auto
+        background: 0
+        left: 0
+        top: 0
+
+      .gauge-container
+        width: 15rem
+
+      p
+        line-height: $size-5
+        font-size: $size-5
+
+      .heading
+        color: $blue
+        font-size: $size-3
+        line-height: $size-3
+        text-transform: uppercase
+        font-weight: $weight-bold !important
+        font-family: $family-common
+        letter-spacing: -.1rem
+        margin: 0 0 .5rem 0
+        text-shadow: none
