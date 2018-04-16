@@ -4,4 +4,9 @@ import App from 'components/app';
 
 /** @jsx preact.h */
 
-preact.render((<App />), document.body);
+document.addEventListener('DOMContentLoaded', () => {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+  preact.render((<App />), document.body);
+});

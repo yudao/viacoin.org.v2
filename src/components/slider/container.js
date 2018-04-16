@@ -16,6 +16,7 @@ export default class SliderIntro extends preact.Component {
     this.af = null;
 
     this.state = {
+      ival : 0,
       active: 0,
       slides: null,
       prev: null,
@@ -24,10 +25,9 @@ export default class SliderIntro extends preact.Component {
   }
 
   componentDidMount() {
-    const slider = document.querySelector(".slider");
-    const slides = slider.querySelectorAll(".slide") || [];
+    const slides = this.base.querySelectorAll(".slide") || [];
     const that = this;
-    this.af = new AlloyFinger(slider, {
+    this.af = new AlloyFinger(this.base, {
       swipe: function (evt) {
         if (evt.direction == "Right") {
           that.previous();
@@ -38,8 +38,8 @@ export default class SliderIntro extends preact.Component {
     });
 
     if (slides.length > 0) {
-      const prev = slider.querySelector(".prev");
-      const next = slider.querySelector(".next");
+      const prev = this.base.querySelector(".prev");
+      const next = this.base.querySelector(".next");
 
       slides[0].classList.remove(this.hiddenClass);
 
@@ -51,10 +51,15 @@ export default class SliderIntro extends preact.Component {
     }
 
     this.toggleControls();
+
+    // this.state.ival = setInterval(()=> {
+    //   this.next()
+    // }, 8000);
   }
 
   componentDidUnMount() {
     this.af = this.af.destroy();
+     window.clearInterval(this.state.ival);
   }
 
   setSlide() {
@@ -72,6 +77,8 @@ export default class SliderIntro extends preact.Component {
       this.state.active++
       this.setSlide();
       this.toggleControls();
+    } else {
+      this.state.active = -1
     }
   }
   previous() {
@@ -79,6 +86,8 @@ export default class SliderIntro extends preact.Component {
       this.state.active--
       this.setSlide();
       this.toggleControls();
+    } else {
+      this.state.active = length(this.state.slides) + 1
     }
   }
 
@@ -103,14 +112,14 @@ export default class SliderIntro extends preact.Component {
     return <div class="navigation"></div>
   }
 
-  renderSlides(slides){
-    return slides.map(slide => {
+  renderSlides(){
+    return this.props.config.slider.slides.map(slide => {
       return <div class="slide is-hidden has-text-centered" dangerouslySetInnerHTML={{__html: slide}}></div>
     });
   }
 
   render(props, state) {
-    const slides = this.renderSlides(props.config);
+    const slides = this.renderSlides();
     return <div class="slider">
       <div class="container">
         {slides}

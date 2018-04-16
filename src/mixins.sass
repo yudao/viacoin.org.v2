@@ -1,4 +1,5 @@
 @import "../node_modules/bulma/sass/utilities/mixins"
+@import "../node_modules/bulma/sass/utilities/controls"
 
 // ANIMATIONS
 
@@ -28,9 +29,18 @@
   -o-transition: $args
   transition: $args
 
+@mixin grayscale($value)
+  -webkit-filter: #{"grayscale(#{$value})"}
+  -moz-filter: #{"grayscale(#{$value})"}
+  filter: #{"grayscale(#{$value})"}
+
 
 // DEFAULT ANIMATIONS
 
 @include keyframes(fadein)
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; visibility: hidden}
+  100% { opacity: 1; visibility: visible}
+
+@include keyframes(fadeout)
+  0% { opacity: 1; visibility: visible}
+  100% { opacity: 0; visibility: hidden}

@@ -5,6 +5,45 @@
   margin-right  : auto
   display: flex
 
+  .tag
+    margin: 0 0 .5rem 0
+
+  .is-marketcap
+    +mobile
+      margin: 2rem 0 0 0
+      .column
+        padding: 1rem 0
+    +tablet
+      margin: 4rem 0 0 0
+      .column
+        &:first-child
+          border-right: solid 1px $white
+        &:last-child
+          border-left: solid 1px $white
+
+  .is-statistics
+    +mobile
+      &:not(body)
+        padding: 0
+    display: inline-block
+    background: transparent
+    margin: 0 0 0 1rem
+    padding: .5rem 0 0 1rem
+    font-family: $family-common
+    @include animation('fadein 1s')
+
+    .is-value
+      +mobile
+        font-size: $size-4
+        line-height: $size-4
+      font-size: $size-1
+      line-height: $size-1
+      text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.35)
+
+    .is-label
+      font-size: $size-6
+      color: $white
+
   .slide
     position: relative
     flex: 0 0 100%

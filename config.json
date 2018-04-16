@@ -1,9 +1,9 @@
 {
   "slider": {
     "slides": [
-      "<h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\">THE <strong>NEXT</strong> GENERATION OF <strong class=\"has-text-weight-semibold\">CRYPTO</strong> <strong>CURRENCY</strong></h1><h2 class=\"subtitle\">Viacoin is an open source crypto-currency created in 2014, derived from the Bitcoin protocol that supports embedded consensus with an <strong>extended OP_RETURN</strong> of <strong>120 byte</strong>.</h2>",
-      "<h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\">THE <strong>NEXT</strong> GENERATION OF <strong class=\"has-text-weight-semibold\">CRYPTO</strong> <strong>CURRENCY</strong></h1><h2 class=\"subtitle\">Viacoin is an open source crypto-currency created in 2014, derived from the Bitcoin protocol that supports embedded consensus with an <strong>extended OP_RETURN</strong> of <strong>120 byte</strong>.</h2>",
-      "<h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\">THE <strong>NEXT</strong> GENERATION OF <strong class=\"has-text-weight-semibold\">CRYPTO</strong> <strong>CURRENCY</strong></h1><h2 class=\"subtitle\">Viacoin is an open source crypto-currency created in 2014, derived from the Bitcoin protocol that supports embedded consensus with an <strong>extended OP_RETURN</strong> of <strong>120 byte</strong>.</h2>"
+      "<h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\">THE <strong>NEXT</strong> GENERATION OF <strong class=\"has-text-weight-semibold\">CRYPTO</strong> <strong>CURRENCY</strong></h1><h2 class=\"subtitle\">Viacoin is an open source crypto-currency created in 2014, derived from the Bitcoin protocol that supports embedded consensus with an <strong>extended OP_RETURN</strong> of <strong>120 byte</strong>.</h2><div class=\"columns is-vcentered is-marketcap\"><div class=\"column\"><div class=\"tag is-large is-statistics has-text-centered\"><div class=\"is-value\">{rank}</div><div class=\"is-label\">Market Rank</div></div></div><div class=\"column\"><div class=\"tag is-large is-statistics has-text-centered\"><div class=\"is-value\">${market_cap_usd}</div><div class=\"is-label\">Market Cap</div></div></div><div class=\"column\"><div class=\"tag is-large is-statistics has-text-centered\"><div class=\"is-value\">${24h_volume_usd}</div><div class=\"is-label\">Volume 24H</div></div></div></div>",
+      "<div class=\"columns is-vcentered\"><div class=\"column is-half has-text-left\"><span class=\"tag is-success is-medium\">NEW</span><h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\">INTRODUCING <strong>HARDWARE</strong> <strong>WALLET SUPPORT</strong></h1><h2 class=\"subtitle\">Viacoin has Ledger Nano S and Ledger Blue support. By embedding the private keys on the chip Ledger provides the safest wallet solution known to the market.</h2></div><div class=\"column is-half\"><img src=\"intro/ledger.png\" alt=\"Ledger\" title=\"Ledger\"/></div></div>",
+      "<div class=\"columns is-vcentered\"><div class=\"column is-three-fifths has-text-left\"><span class=\"tag is-success is-medium\">UPCOMING</span><h1 class=\"title is-1 is-spaced has-text-weight-normal has-text-black-ter\"><strong>VIACOIN COPAY</strong> MULTISIGNATURE WALLET</h1><h2 class=\"subtitle\">Viacoin will soon launch its multisignature wallet. The Copay app securely stores multiple, distinct bitcoin wallets, allowing both business and privacy-conscious users to keep funds carefully separated. Manage personal, business, and testnet wallets easily, all without leaving the app. Copay uses hierarchical-deterministic (HD) wallets, allowing for secure in-app wallet generation and backup.</h2></div><div class=\"column\"><img src=\"intro/copay.png\" alt=\"Copay\" title=\"Copay\"/></div></div>"
     ]
   },
   "features": [
@@ -33,6 +33,54 @@
       "text": "Viacoin is ready to use the Lightning Network. This enables improvements of several orders of magnitude in transaction throughput by moving the majority of transactions outside the consensus ledgers into payment channels. This allows millions to billions of transactions per second across the network. A capacity that blows away legacy payment rails."
     }
   ],
+  "wallets": {
+    "first": [
+      {
+        "icon": "WindowsIcon",
+        "title": "Windows 64-bit",
+        "url": "https://github.com/viacoin/viacoin/releases/download/v0.13.3.7/viacoin-0.13.3-win64-setup-unsigned.exe",
+        "button": "Download"
+      },
+      {
+        "icon": "WindowsIcon",
+        "title": "Windows 32-bit",
+        "url": "https://github.com/viacoin/viacoin/releases/download/v0.13.3.7/viacoin-0.13.3-win32-setup-unsigned.exe",
+        "button": "Download"
+      },
+      {
+        "icon": "MacOsIcon",
+        "title": "Mac OSX ",
+        "url": "https://github.com/viacoin/viacoin/releases/download/v0.13.3.7/viacoin-0.13.3-osx-unsigned.dmg",
+        "button": "Download"
+      },
+      {
+        "icon": "VialectrumIcon",
+        "title": "Vialectrum",
+        "url": "https://vialectrum.org",
+        "button": "Open"
+      },
+      {
+        "icon": "ViacoinPaperWalletIcon",
+        "title": "Viacoin Paper Wallet",
+        "url": "https://viacoin.github.io/address-generator",
+        "button": "Open"
+      }
+    ],
+    "third": [
+      {
+        "icon": "MobileIcon",
+        "title": "Mobile (Coinomi)",
+        "url": "https://coinomi.com",
+        "button": "Download"
+      },
+      {
+        "icon": "LedgerIcon",
+        "title": "Ledger hardware wallets",
+        "url": "https://www.ledgerwallet.com",
+        "button": "Buy"
+      }
+    ]
+  },
   "roadmap": [
     {
       "progress": 90,
@@ -171,6 +219,161 @@
       "title" : "UPGRADE LEVELDB",
       "text": "Contains hardware acceleration for CRC on architectures supporting SSE 4.2. As a result, synchronization and block validation will be faster.",
       "icons": []
+    }
+  ],
+  "team": [
+    {
+      "name": "Romano",
+      "job": "Lead Developer",
+      "picture": "team/romano.svg",
+      "icons": ["GithubIcon"],
+      "url": ["https://github.com/romanornr"]
+    },
+    {
+      "name": "Reorder",
+      "job": "Developer",
+      "picture": "team/reorder.svg",
+      "icons": ["GithubIcon"],
+      "url": ["https://github.com/reorder"]
+    },
+    {
+      "name": "Frank",
+      "job": "Developer",
+      "picture": "team/frank.svg",
+      "icons": ["LinkedinIcon"],
+      "url": ["https://www.linkedin.com/in/frank-marrone-b833533/"]
+    },
+    {
+      "name": "Chainfailure",
+      "job": "Developer",
+      "picture": "team/chainfailure.svg",
+      "icons": ["GithubIcon", "TwitterIcon"],
+      "url": ["https://github.com/chainfailure", "https://www.twitter.com/chainfailure"]
+    },
+    {
+      "name": "Hotshot",
+      "job": "Developer",
+      "picture": "team/hotshot.svg",
+      "icons": ["TwitterIcon"],
+      "url": ["https://twitter.com/cryptoshot"]
+    },
+    {
+      "name": "Mike V",
+      "job": "Head of Marketing",
+      "picture": "team/mikev.svg",
+      "icons": ["TwitterIcon"],
+      "url": ["https://www.twitter.com/TradingWhaIe"]
+    },
+    {
+      "name": "CR-RM",
+      "job": "Front-end developer/designer",
+      "picture": "team/crrm.svg",
+      "icons": [],
+      "url": []
+    }
+  ],
+  "resources":
+  {
+    "pools": [
+      {
+        "picture": "resources/multipool.png",
+        "url": "https://www.multipool.us/dashboard/pool/via",
+        "delay": 100,
+        "styles": "height: 88px;"
+
+      },
+      {
+        "picture": "resources/f2pool.png",
+        "url": "https://www.f2pool.com/",
+        "delay": 200,
+        "styles": "height: 80px;"
+      },
+      {
+        "picture": "resources/litecoinpool.png",
+        "url": "https://www.litecoinpool.org/",
+        "delay": 300,
+        "styles": "height: 30px;"
+      }
+    ],
+    "exchanges": [
+      {
+        "picture": "resources/binance.png",
+        "url": "https://www.binance.com/tradeDetail.html?symbol=VIA_BTC",
+        "delay": 100,
+        "styles": "height: 62px;"
+      },
+      {
+        "picture": "resources/bittrex.png",
+        "url": "https://upbit.com/exchange?code=CRIX.UPBIT.BTC-VIA",
+        "delay": 200,
+        "styles": "height: 45px;"
+      },
+      {
+        "picture": "resources/upbit.png",
+        "url": "https://bittrex.com/Market/Index?MarketName=BTC-VIA",
+        "delay": 300,
+        "styles": "height: 39px;"
+      },
+      {
+        "picture": "resources/poloniex.png",
+        "url": "https://poloniex.com/exchange/btc_via",
+        "delay": 400,
+        "styles": "height: 35px;"
+      },
+      {
+        "picture": "resources/yobit.png",
+        "url": "https://yobit.net/en/trade/VIA/BTC",
+        "delay": 500,
+        "styles": "height: 55px;"
+      },
+      {
+        "picture": "resources/coinroom.png",
+        "url": "https://coinroom.com/",
+        "delay": 600,
+        "styles": "height: 35px;"
+      },
+      {
+        "picture": "resources/barterdex.png",
+        "url": "http://www.barterdex.com/",
+        "delay": 700,
+        "styles": "height: 35px;"
+      }
+    ],
+    "services": [
+      {
+        "picture": "resources/cryptoid.png",
+        "url": "https://chainz.cryptoid.info/via/",
+        "delay": 100,
+        "styles": "height: 44px;"
+      },
+      {
+        "picture": "resources/litebit.png",
+        "url": "https://www.litebit.eu/en/buy/viacoin",
+        "delay": 200,
+        "styles": "height: 38px;"
+      }
+    ]
+  },
+  "donate": [
+    {
+      "name": "Viacoin",
+      "currency": "VIA",
+      "address": "VvG41BRB2W9GeAbgsiAdJQdiAncUJwoW1K"
+    },
+    {
+      "name": "Bitcoin",
+      "currency": "BTC",
+      "address": "341YqUzFMxrmQaJzATQjdzSsMiy2E7mz3d"
+    },
+    {
+      "name": "Litecoin",
+      "currency": "LTC",
+      "address": "MFGKd5jcAp2ZBGzfm4DVWSBB8bdGiaYZcD"
+    },
+    {
+      "name": "Ethereum",
+      "currency": "ETH",
+      "address": "0xf85cde43d0c9B7d7C89216c5ac5F1517e27Cd5CD"
     }
   ]
 }

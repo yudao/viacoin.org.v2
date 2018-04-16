@@ -1,20 +1,25 @@
 import preact from 'preact';
-
-import './styles.sass'
+import numbro from 'numbro';
 
 import Logo from 'components/logo/picture';
-import Hamburger from 'components/icons/hamburger';
+
+import './styles.sass'
 
 /** @jsx preact.h */
 
 export default class Navbar extends preact.Component {
-  render() {
+  render(props, state) {
+    const {marketcap} = props;
+    const priceUSD = numbro(marketcap.price_usd).format({mantissa: 2});
     return <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="">
           <Logo circle="true" text="true" />
+          <div class="tag is-large is-statistics has-text-centered">
+            <div class="is-value">${priceUSD}</div>
+            <div class="is-label">Current Price</div>
+          </div>
         </a>
-        <Hamburger />
       </div>
     </nav>;
   }
