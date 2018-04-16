@@ -7,21 +7,28 @@ import './styles.sass'
 /** @jsx preact.h */
 
 export default class RoadmapMedia extends preact.Component {
+
   constructor() {
     super();
-    this.toggleActiveClass= this.toggleActiveClass.bind(this);
-    this.activeClassName = "is-active";
     this.state = {
-      activeClass: ""
+      ival: "",
+      start: 0
     }
   }
 
-  toggleActiveClass(e) {
-    const currentActiveClass = (this.state.activeClass == "") ? this.activeClassName : "";
-    // e.target.closest(".columns").querySelectorAll("." + this.activeClassName).forEach(c => {
-    //   c.classList.remove(this.activeClassName);
-    // });
-    this.setState({ activeClass: currentActiveClass });
+  componentWillMount(){
+    this.state.ival = setInterval(()=> {
+      if (this.base.classList.contains("aos-animate")) {
+        this.setState({ start: this.props.progress });
+      } else if (!this.base.classList.contains("aos-animate") && this.props.progress > 0) {
+        this.setState({ start: 0 });
+      }
+    }, 100);
+  }
+
+  componentWillUnMount(){
+    window.clearInterval(this.state.ival)
+    this.state.start = 0;
   }
 
   notificationColor(progress) {
@@ -37,18 +44,21 @@ export default class RoadmapMedia extends preact.Component {
   }
 
   render(props, state) {
-    const {progress, title, text} = props;
+    const {progress, title, text, index} = props;
     const icons = this.props.children[0];
     const colorClass = this.notificationColor(progress)
-    const classes = "timeline-item " + colorClass + " " + this.state.activeClass;
 
-    return <article class={ classes } data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
-      <div class="timeline-marker">
-        <GaugeCircular value={ progress } classes={ colorClass } />
+    return <article class="columns is-vcentered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
+      <div class="column is-narrow">
+        <GaugeCircular value={ state.start } classes={ colorClass } />
       </div>
-      <div class="timeline-content">
+      <div class="column is-1 is-narrow">
+        <hr class={colorClass} />
+      </div>
+      <div class="column is-5">
         <p class="heading">{ title }</p>
         <p>{ text }</p>
+        { icons }
       </div>
     </article>
   }

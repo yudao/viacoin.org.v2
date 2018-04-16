@@ -1,4 +1,40 @@
+.menu
+  +mobile
+    width: 50%
+    right: -50%
+  position: fixed
+  right: -25%
+  min-height: 100vh
+  width: 25%
+  z-index: 39
+  padding: 10rem 0 2rem 2rem
+  background: $white
+  transition: all 650ms ease-in-out
+
+
 .navbar-brand
-  width: 100%
-  button
-    margin-left: auto
+  +mobile
+    .navbar-item
+      width: 100%
+    .has-svg-align
+      width: 8rem
+    svg
+      width: 20%
+    .logo-text
+      font-size: $size-4
+
+  .is-statistics
+    display: inline-block
+    background: transparent
+    color: $is-success
+    border-left: solid 1px $white-ter
+    margin: 0 0 0 1rem
+    padding: .5rem 0 0 1rem
+    line-height: 1rem
+    font-weight: $weight-black
+    font-family: $family-common
+    @include animation('fadein 1s')
+
+    .is-label
+      font-size: .5rem
+      color: $white

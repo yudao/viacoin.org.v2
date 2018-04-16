@@ -15,7 +15,7 @@ const defaultOptions = {
   dialEndAngle: -90.001,
   animDuration: 1,
   label: function(value) {
-    return (Math.round(value * 100) / 100).toFixed();
+    return (Math.round(value * 100) / 100).toFixed() + ' %';
   }
 };
 

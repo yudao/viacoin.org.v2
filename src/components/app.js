@@ -1,37 +1,92 @@
 import preact from 'preact';
+import AOS from 'aos/dist/aos';
+import numbro from 'numbro';
 
+import SplashScreen from 'components/splash/screen';
 import Particles from 'components/particles/background';
 import Intro from 'components/layout/intro/section';
 import Features from 'components/layout/features/section';
 import Roadmap from 'components/layout/roadmap/section';
+import Wallet from 'components/layout/wallet/section';
+import Team from 'components/layout/team/section';
+import Resources from 'components/layout/resources/section';
+import Footer from 'components/layout/footer/section';
+import Sidebar from 'components/nav/side';
+import Hamburger from 'components/icons/hamburger';
+import Ribbon from 'components/ribbon/ribbon';
 
 import './app.sass'
 import './bg-blue-space.jpg'
 
-import Rellax from 'rellax/rellax';
-import AOS from 'aos/dist/aos';
-
 /** @jsx preact.h */
 
 export default class App extends preact.Component {
+  constructor() {
+    super();
+    this.state = {
+      config: {},
+      loading: true
+    }
+  }
+
+  config() {
+    let host = '//' + window.location.hostname + '/' + window.location.pathname + '/';
+    if(process.env.NODE_ENV == 'development') host = '';
+    fetch(host + 'config.json')
+    .then(res => res.json())
+    .then(data => this.setState({config: data}))
+    .then(fetch('https://api.coinmarketcap.com/v1/ticker/viacoin/')
+    .then(res => res.json())
+    .then(data => {
+      this.state.config.coinmarketcap = data[0];
+      this.state.config.slider.slides = this.state.config.slider.slides.map(s => {
+        return s.replace(
+          "{rank}",
+          numbro(this.state.config.coinmarketcap.rank).format({
+            output: "ordinal"
+          })
+        )
+        .replace(
+          "{market_cap_usd}",
+          numbro(this.state.config.coinmarketcap.market_cap_usd).format({
+            average: true,
+            mantissa: 2
+          })
+        )
+        .replace(
+          "{24h_volume_usd}",
+          numbro(this.state.config.coinmarketcap["24h_volume_usd"]).format({
+            average: true,
+            mantissa: 2
+          })
+        )
+      });
+      this.setState({config: this.state.config, loading: false})
+    }))
+  }
 
   componentDidMount() {
-    this.rellax = new Rellax('.rellax', {center: true});
+    this.config();
     AOS.init();
   }
 
-  componentWillUnMount() {
-    this.rellax.destroy();
-  }
-
-  render() {
+  render(props, state) {
+    if (state.loading) return <SplashScreen />;
     return <section class="app">
       <Particles />
-      <Intro />
-      <div class="has-background-blue-space">
-        <Features />
-        <Roadmap />
-      </div>
+      <Sidebar />
+      <Ribbon classes="top-right sticky shadow">
+        <a href="https://github.com/viacoin/documents/tree/master/whitepapers" target="_blank">WhitePaper</a>
+      </Ribbon>
+      <Intro config={state.config} />
+      <Features config={state.config.features} />
+      <Roadmap config={state.config.roadmap} />
+      <Team config={state.config.team} />
+      <Wallet config={state.config.wallets} />
+      <Resources config={state.config.resources} />
+      <Footer config={state.config.donate} />
     </section>;
   }
 }
+
+//      <Hamburger />
