@@ -4,6 +4,8 @@ Viacoin website app source.
 
 This app generate the build of the website (HTML, CSS, JS, JSON, MEDIAS).
 
+[![CircleCI](https://circleci.com/gh/yudao/viacoin.org.v2/tree/master.svg?style=svg)](https://circleci.com/gh/yudao/viacoin.org.v2/tree/master)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
