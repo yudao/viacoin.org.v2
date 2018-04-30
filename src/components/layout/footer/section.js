@@ -7,6 +7,7 @@ import TwitterIcon from 'components/icons/social/twitter';
 import RedditIcon from 'components/icons/social/reddit';
 import DiscordIcon from 'components/icons/social/discord';
 import BitcoinTalkIcon from 'components/icons/social/bitcoin-talk';
+import MediumIcon from 'components/icons/social/medium';
 
 import "./styles.sass";
 
@@ -25,6 +26,7 @@ export default class LayoutFooter extends preact.Component {
             <h4 class="title is-1">Community</h4>
             <p>
               <a href="https://twitter.com/viacoin" title="Viacoin Twitter" target="_blank"><TwitterIcon /></a>
+              <a href="https://medium.com/@viacoin" title="Viacoin Medium" target="_blank"><MediumIcon /></a>
               <a href="https://www.reddit.com/r/viacoin/" title="Viacoin Reddit" target="_blank"><RedditIcon /></a>
               <a href="https://discordapp.com/invite/f7SXbBX" title="Viacoin Discord" target="_blank"><DiscordIcon /></a>
               <a href="https://bitcointalk.org/index.php?topic=699278.0" title="Viacoin Bitcoin Talk" target="_blank"><BitcoinTalkIcon /></a>

@@ -39,10 +39,6 @@ export default class LayoutTeam extends preact.Component {
           <h3 class="title is-1" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
             <span class="has-text-weight-light">THE</span> TEAM
           </h3>
-          <h2 class="subtitle is-1" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
-            ALWAYS BEHIND A GREAT PROJECT,
-            <span>A TEAM IS HARD WORKING</span>
-          </h2>
         </div>
         {cards}
       </div>
