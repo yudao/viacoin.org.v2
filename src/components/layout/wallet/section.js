@@ -35,8 +35,8 @@ export default class LayoutTeam extends preact.Component {
       <div class="box">
         { obj.version &&
           <span class="tags has-addons">
-            <span class="tag is-light">Via Core</span>
-            <span class="tag">{obj.version}</span>
+            <span class="tag is-light">{obj.version[0]}</span>
+            <span class="tag">{obj.version[1]}</span>
           </span>
         }
         <h4 class="title is-6">{obj.title}</h4>
@@ -50,21 +50,18 @@ export default class LayoutTeam extends preact.Component {
     </article>
   }
 
-  wallets() {
-    return {
-      first: this.props.config.first.map(p => {
-        p.classes = "column"
-        return this.resource(p)
-      }),
-      third: this.props.config.third.map(p => {
-        p.classes = "column"
-        return this.resource(p)
-      }),
-    }
+  wallets(obj) {
+    console.log(obj);
+    return obj.map(p => {
+      p.classes = "column"
+      return this.resource(p)
+    });
   }
 
   render(props, state) {
-    const wallets = this.wallets();
+    const os = this.wallets(this.props.config.first[0].os);
+    const apps = this.wallets(this.props.config.first[1].apps);
+    const thirds = this.wallets(this.props.config.third);
     return <section class="is-wallet">
       <div class="container">
         <div class="has-text-centered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
@@ -76,17 +73,14 @@ export default class LayoutTeam extends preact.Component {
         <div class="columns is-first-wallet has-text-centered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
           <div class="column">
             <h4 class="title is-4">1<sup>st</sup> PARTY WALLET</h4>
-            <div class="columns">
-              { wallets.first }
-            </div>
+            <div class="columns">{ os }</div>
+            <div class="columns">{ apps }</div>
           </div>
         </div>
         <div class="columns is-third-wallet has-text-centered"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
           <div class="column">
             <h4 class="title is-4">3<sup>rd</sup> PARTY WALLET</h4>
-            <div class="columns">
-              { wallets.third }
-            </div>
+            <div class="columns">{ thirds }</div>
           </div>
         </div>
       </div>

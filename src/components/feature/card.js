@@ -7,15 +7,26 @@ import './styles.sass'
 export default class FeatureCard extends preact.Component {
   constructor() {
     super();
-    this.toggleActiveClass= this.toggleActiveClass.bind(this);
+    this.toggleActiveClass = this.toggleActiveClass.bind(this);
+    this.enableActiveClass = this.enableActiveClass.bind(this);
+    this.disableActiveClass = this.disableActiveClass.bind(this);
     this.activeClassName = "is-active";
     this.state = {
       activeClass: ""
     }
   }
 
+  enableActiveClass(e) {
+    this.setState({ activeClass: this.activeClassName });
+  }
+
+  disableActiveClass(e) {
+    this.setState({ activeClass: "" });
+  }
+
   toggleActiveClass(e) {
     const currentActiveClass = (this.state.activeClass == "") ? this.activeClassName : "";
+    console.log(currentActiveClass);
     e.target.closest(".columns").querySelectorAll("." + this.activeClassName).forEach(c => {
       c.classList.remove(this.activeClassName);
     });
@@ -27,7 +38,7 @@ export default class FeatureCard extends preact.Component {
     const icon = this.props.children[0];
     // const isActive = this.state.activeClass || false;
     const classes = "card is-vcentered has-text-centered " + this.state.activeClass;
-    return <article class={ classes } onclick={ this.toggleActiveClass }>
+    return <article class={ classes } onclick={ this.toggleActiveClass } onmouseover={ this.enableActiveClass } onmouseout={ this.disableActiveClass }>
       <div class="card-image">
         <span class="is-icon">{ icon }</span>
         <h4 class="title is-4">{ title }</h4>
