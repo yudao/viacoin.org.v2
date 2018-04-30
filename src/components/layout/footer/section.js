@@ -31,6 +31,9 @@ export default class LayoutFooter extends preact.Component {
               <a href="https://discordapp.com/invite/f7SXbBX" title="Viacoin Discord" target="_blank"><DiscordIcon /></a>
               <a href="https://bitcointalk.org/index.php?topic=699278.0" title="Viacoin Bitcoin Talk" target="_blank"><BitcoinTalkIcon /></a>
             </p>
+            <br /><br />
+            <h4 class="title is-1">Contact</h4>
+            <p><a class="has-text-white" href="mailto:info@viacoin.org" title="Viacoin">info@viacoin.org</a></p>
           </div>
           <div class="column is-development">
             <h4 class="title is-1">Development</h4>
@@ -39,19 +42,6 @@ export default class LayoutFooter extends preact.Component {
               <a class="button is-medium is-link" href="https://github.com/viacoin/viacoin/releases" title="All releases" target="_blank">All releases</a>
               <a class="button is-medium is-link" href="http://108.61.216.160/cryptochainer.chains/chains/Viacoin_blockchain.zip" title="Blockchain Bootstrap" target="_blank">Blockchain Bootstrap</a>
             </p>
-          </div>
-        </div>
-        <div class="columns" data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
-          <div class="column is-donate">
-            <h4 class="title is-1">Donate</h4>
-            <p>
-              Viacoin has been funded by team and community since 2014. You can contribute in order to help us to expand the team faster or to increase our marketing actions. We plan to give you transparency on the way community funds will be allocated.
-            </p>
-            <p><Donate currencies={config}/></p>
-          </div>
-          <div class="column is-contact">
-            <h4 class="title is-1">Contact</h4>
-            <p><a class="has-text-white" href="mailto:info@viacoin.org" title="Viacoin">info@viacoin.org</a></p>
           </div>
         </div>
       </div>
@@ -63,6 +53,23 @@ export default class LayoutFooter extends preact.Component {
     </section>;
   }
 }
+
+/*
+<div class="columns" data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
+  <div class="column is-donate">
+    <h4 class="title is-1">Donate</h4>
+    <p>
+      Viacoin has been funded by team and community since 2014. You can contribute in order to help us to expand the team faster or to increase our marketing actions. We plan to give you transparency on the way community funds will be allocated.
+    </p>
+    <p><Donate currencies={config}/></p>
+  </div>
+  <div class="column is-contact">
+    <h4 class="title is-1">Contact</h4>
+    <p><a class="has-text-white" href="mailto:info@viacoin.org" title="Viacoin">info@viacoin.org</a></p>
+  </div>
+</div>
+
+*/
 
 //   <p>
     // <a href="https://github.com/viacoin/viacoin/" title="Viacoin Github" target="_blank"><GithubIcon /></a>
