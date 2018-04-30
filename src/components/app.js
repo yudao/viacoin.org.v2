@@ -81,8 +81,8 @@ export default class App extends preact.Component {
       <Intro config={state.config} />
       <Features config={state.config.features} />
       <Roadmap config={state.config.roadmap} />
-      <Team config={state.config.team} />
       <Wallet config={state.config.wallets} />
+      <Team config={state.config.team} />
       <Resources config={state.config.resources} />
       <Footer config={state.config.donate} />
     </section>;
