@@ -13,7 +13,7 @@ jobs:
     steps:
       - run:
           name: Install synaptic dependencies
-          command: sudo apt-get update; sudo apt-get install libpng16-dev autoconf libtool pkg-config nasm build-essential
+          command: sudo apt-get update; sudo apt-get install autoconf libtool pkg-config nasm
 
       - checkout
 
