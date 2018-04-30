@@ -13,7 +13,7 @@ jobs:
     steps:
       - run:
           name: Install synaptic dependencies
-          command: sudo apt-get update; sudo apt-get install libpng16-16
+          command: sudo apt-get update; sudo apt-get install libpng12-dev
 
       - checkout
 
