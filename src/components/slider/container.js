@@ -1,5 +1,5 @@
 import preact from 'preact';
-import AlloyFinger from 'alloyFinger';
+import AlloyFinger from 'alloyfinger';
 
 import './styles.sass';
 
