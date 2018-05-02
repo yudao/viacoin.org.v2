@@ -3,11 +3,13 @@ import preact from 'preact';
 import Logo from 'components/logo/picture';
 import WindowsIcon from 'components/icons/os/windows';
 import MacOsIcon from 'components/icons/os/macosx';
-import AndroidIcon from 'components/icons/os/macosx';
+import AndroidIcon from 'components/icons/os/android';
 import LinuxIcon from 'components/icons/os/linux';
 import VialectrumIcon from 'components/icons/wallets/vialectrum';
 import ViacoinPaperWalletIcon from 'components/icons/wallets/viacoin-paper-wallet';
 import MobileIcon from 'components/icons/wallets/mobile';
+import CoinomiIcon from 'components/icons/wallets/coinomi';
+import TrezorIcon from 'components/icons/wallets/trezor';
 import LedgerIcon from 'components/icons/wallets/ledger';
 import CopayIcon from 'components/icons/wallets/copay';
 
@@ -25,6 +27,8 @@ export default class LayoutTeam extends preact.Component {
       VialectrumIcon,
       ViacoinPaperWalletIcon,
       MobileIcon,
+      CoinomiIcon,
+      TrezorIcon,
       LedgerIcon,
       LinuxIcon,
       CopayIcon,
@@ -51,7 +55,6 @@ export default class LayoutTeam extends preact.Component {
   }
 
   wallets(obj) {
-    console.log(obj);
     return obj.map(p => {
       p.classes = "column"
       return this.resource(p)

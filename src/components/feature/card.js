@@ -26,7 +26,6 @@ export default class FeatureCard extends preact.Component {
 
   toggleActiveClass(e) {
     const currentActiveClass = (this.state.activeClass == "") ? this.activeClassName : "";
-    console.log(currentActiveClass);
     e.target.closest(".columns").querySelectorAll("." + this.activeClassName).forEach(c => {
       c.classList.remove(this.activeClassName);
     });
