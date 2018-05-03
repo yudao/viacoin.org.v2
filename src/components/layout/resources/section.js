@@ -10,7 +10,7 @@ export default class LayoutResources extends preact.Component {
 
   resource(obj) {
     return <div>
-      <div class={obj.classes + " is-hidden-mobile"} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-delay={obj.delay} data-aos-anchor-placement="bottom-center">
+      <div class={obj.classes + " is-hidden-mobile"} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-delay={obj.delay} data-aos-anchor-placement="top-center">
         <a href={obj.url} target="_blank"><img src={obj.picture} alt={obj.title} title={obj.title} style={obj.styles} /></a>
       </div>
       <div class={obj.classes + " is-hidden-desktop"} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
