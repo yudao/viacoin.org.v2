@@ -9,7 +9,7 @@ import "./styles.sass";
 export default class LayoutResources extends preact.Component {
 
   resource(obj) {
-    return <div class={obj.classes} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-delay={obj.delay} data-aos-anchor-placement="top-center">
+    return <div class={obj.classes} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-delay={obj.delay} data-aos-anchor-placement="bottom-center">
       <a href={obj.url} target="_blank"><img src={obj.picture} alt={obj.title} title={obj.title} style={obj.styles} /></a>
     </div>
   }

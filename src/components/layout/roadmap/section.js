@@ -41,7 +41,7 @@ export default class LayoutRoadmap extends preact.Component {
   render(props, state) {
     const {config} = props;
     const medias = this.medias(config);
-    return <section class="section is-roadmap">
+    return <section class="section is-roadmap" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-top">
       <div class="container">
         <h3 class="title is-1 has-text-weight-light" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-bottom">
           <strong>2018</strong>
