@@ -35,7 +35,7 @@ export default class LayoutTeam extends preact.Component {
       AndroidIcon
     };
     const Icon = icons[obj.icon];
-    return <article class={obj.classes} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-delay={obj.delay} data-aos-anchor-placement="bottom-bottom">
+    return <article class={obj.classes} data-aos-speed="3" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
       <div class="box">
         { obj.version &&
           <span class="tags has-addons">
