@@ -27,7 +27,7 @@ export default class TeamCard extends preact.Component {
     const {name, job, picto, icons, url, index} = props;
     const title = name + " - " + job;
     const socialIcons = this.icons(props);
-    const speed = index * 50
+    const speed = index * 100
     return <article class="card has-text-centered">
       <div class="card-image" data-aos="flip-left" data-aos-easing="ease" data-aos-anchor-placement="top-center" data-aos-duration="0">
         <img src={picto} alt={title} title={title} />
