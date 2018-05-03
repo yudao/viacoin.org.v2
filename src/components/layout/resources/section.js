@@ -42,16 +42,16 @@ export default class LayoutResources extends preact.Component {
             RESOURCES
           </h3>
         </div>
-        <div class="columns has-text-centered"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
+        <div class="columns has-text-centered"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
           <div class="column is-one-third">
             <h4 class="title is-4">POOLS</h4>
             {resources.pools}
           </div>
-          <div class="column is-one-third"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
+          <div class="column is-one-third"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
             <h4 class="title is-4">EXCHANGES</h4>
             {resources.exchanges}
           </div>
-          <div class="column is-one-third"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center">
+          <div class="column is-one-third"  data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
             <h4 class="title is-4">SERVICES</h4>
             {resources.services}
           </div>
