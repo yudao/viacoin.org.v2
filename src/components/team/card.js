@@ -28,7 +28,7 @@ export default class TeamCard extends preact.Component {
     const title = name + " - " + job;
     const socialIcons = this.icons(props);
     return <article class="card has-text-centered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
-      <div class="card-image" data-aos="flip-left" data-aos-easing="ease" data-aos-anchor-placement="bottom-center">
+      <div class="card-image" data-aos="flip-left" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
         <img src={picto} alt={title} title={title} />
       </div>
       <div class="card-content">
