@@ -27,17 +27,27 @@ export default class TeamCard extends preact.Component {
     const {name, job, picto, icons, url, index} = props;
     const title = name + " - " + job;
     const socialIcons = this.icons(props);
-    return <article class="card has-text-centered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
-      <div class="card-image" data-aos="flip-left" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
+    const speed = index * 50
+    return <article class="card has-text-centered">
+      <div class="card-image" data-aos="flip-left" data-aos-easing="ease" data-aos-anchor-placement="top-center" data-aos-duration="0">
         <img src={picto} alt={title} title={title} />
       </div>
-      <div class="card-content">
+      <div class="card-content is-hidden-desktop" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom" data-aos-duration={speed}>
         <div class="media-content has-text-centered">
           <p class="title is-4">{name}</p>
           <p class="subtitle is-6">{job}</p>
         </div>
       </div>
-      <footer class="card-footer">
+      <div class="card-content is-hidden-mobile" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="top-center" data-aos-duration={speed}>
+        <div class="media-content has-text-centered">
+          <p class="title is-4">{name}</p>
+          <p class="subtitle is-6">{job}</p>
+        </div>
+      </div>
+      <footer class="card-footer is-hidden-desktop" data-aos="fade-in" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
+        { socialIcons }
+      </footer>
+      <footer class="card-footer is-hidden-mobile" data-aos="fade-in" data-aos-easing="ease" data-aos-anchor-placement="top-center">
         { socialIcons }
       </footer>
     </article>
