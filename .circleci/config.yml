@@ -11,6 +11,10 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - add_ssh_keys:
+          fingerprints:
+          - "bc:5a:52:49:9e:09:69:22:a4:88:09:a8:82:75:c8:b5"
+
       - run:
           name: Install synaptic dependencies
           command: sudo apt-get update; sudo apt-get install autoconf libtool pkg-config nasm
@@ -29,8 +33,16 @@ jobs:
           command: npm install
 
       - run:
-          name: Build Viacoin.org
-          command: npm run build
+          name: Git config user email
+          command: git config --global user.email "plugman@free.fr"
+
+      - run:
+          name: Git config username
+          command: git config --global user.name "CircleCi Deployment"
+
+      # - run:
+      #     name: Build Viacoin.org
+      #     command: npm run build
 
       - run:
           name: Deploy
