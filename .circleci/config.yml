@@ -32,6 +32,10 @@ jobs:
           name: Build Viacoin.org
           command: npm run build
 
+      - run:
+          name: Deploy
+          command: npm run deploy
+
       - save_cache:
           paths:
             - node_modules
