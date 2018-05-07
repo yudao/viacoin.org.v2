@@ -52,6 +52,16 @@ export default class SliderIntro extends preact.Component {
 
     this.toggleControls();
 
+    slides.forEach(el => {
+      setTimeout(() => {
+          const els = el.querySelectorAll(".is-aleatory");
+          if (els.length > 0) {
+            const random = els[Math.floor(Math.random()*els.length)];
+            random.classList.add('is-selected');
+          }
+        });
+      }, 100);
+
     // this.state.ival = setInterval(()=> {
     //   this.next()
     // }, 8000);
