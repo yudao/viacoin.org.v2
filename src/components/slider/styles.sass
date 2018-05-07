@@ -11,6 +11,11 @@
   .tag
     margin: 0 0 .5rem 0
 
+  .is-aleatory
+    display: none
+    &.is-selected
+      display: block
+
   .is-marketcap
     +mobile
       margin: 2rem 0 0 0
@@ -29,7 +34,7 @@
       &:not(body)
         padding: 0
     display: inline-block
-    background: transparent    
+    background: transparent
     padding: .5rem 0 0 1rem
     font-family: $family-common
     @include animation('fadein 1s')
