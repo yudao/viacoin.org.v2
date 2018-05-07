@@ -1,59 +1,50 @@
 .is-features
-  +mobile
-    .column
-      padding: 1.75rem
+  +widescreen
+    min-height: 100vh
+  +desktop
+    min-height: 120vh
   .card
+    &:hover
+      height: auto
+      max-height: 100rem
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(111, 150, 242, .3) 40%,rgba(10,28,69,.8) 100%)
+      .is-icon
+        width: 8rem
+    +desktop
+      position: absolute
+    width: auto
+    z-index: 40
     background: linear-gradient(to bottom, rgba(10,28,69,.7) 5%,rgba(10,28,69,.3) 80%,rgba(255,255,255,0) 150%)
+    padding: 4rem 0 0
     border-radius: 2rem
     cursor: pointer
-    @include transition(300ms ease-in)
+    overflow: hidden
+    height: 17rem
+    max-height: 17rem
+    @include transition(all 300ms ease-in-out)
 
-    .card-image
-      padding: 5rem 0
-      h4
-        margin: 1rem 0 0
-        padding: 0 1rem
-        font-size: $size-6
-        font-weight: $weight-bold
-        text-transform: uppercase
-        text-shadow: none
-
-    .card-content
-      text-align: center
+  .card-image
+    height: 12rem
+    max-height: 12rem
+    h4
+      margin: 1rem 0 0
+      padding: 0 1rem
       font-size: $size-6
+      font-weight: $weight-bold
+      text-transform: uppercase
       text-shadow: none
-      padding-bottom: 0
-      line-height: $size-6
-      display: none
-
-    .card-footer
-      display: none
-      p
-        font-size: $size-2
 
     .is-icon
       width: 6rem
       display: inline-block
+      @include transition(all 300ms ease-in-out)
       path
         fill: $white
 
-    &.is-active
-      +mobile
-        transform: scale(.9)
-        min-width: auto
-      transform: scale(1)
-      @include transition(300ms ease-out)
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(111, 150, 242, .3) 40%,rgba(10,28,69,.8) 100%)
-      min-width: 20rem
-      box-shadow: 0px 3px 130px 3px rgba(0,0,0,0.75)
-      flex-direction: column-reverse
-      position: flex
-      .card-image
-        padding: 3rem 0 0
-        h4
-          font-size: $size-5
-          box-shadow: none
-      .card-content,
-      .card-footer
-        display: inherit
-        text-shadow: none
+  .card-content
+    font-size: $size-6
+    line-height: $size-6
+
+  .card-footer
+    p
+      font-size: $size-2
