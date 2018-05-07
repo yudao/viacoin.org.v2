@@ -35,17 +35,17 @@ export default class FeatureCard extends preact.Component {
   render(props, state) {
     const {title, text } = props;
     const icon = this.props.children[0];
-    // const isActive = this.state.activeClass || false;
-    const classes = "card is-vcentered has-text-centered " + this.state.activeClass;
+    const classes = "card is-vcentered has-text-centered " + state.activeClass;
+    console.log(classes)
     return <article class={ classes } onclick={ this.toggleActiveClass } onmouseover={ this.enableActiveClass } onmouseout={ this.disableActiveClass }>
       <div class="card-image">
         <span class="is-icon">{ icon }</span>
         <h4 class="title is-4">{ title }</h4>
       </div>
-      <div class={"card-content " + this.state.activeClass}>
+      <div class="card-content">
         <div class="content">{ text }</div>
       </div>
-      <footer class={"card-footer " + this.state.activeClass}>
+      <footer class="card-footer">
         <p class="card-footer-item">...</p>
       </footer>
     </article>

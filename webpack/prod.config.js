@@ -5,6 +5,7 @@ const merge = require('webpack-merge');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const baseConfig = require('./base.config.js');
 const WorkboxPlugin = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(baseConfig, {
   module: {
@@ -29,7 +30,13 @@ module.exports = merge(baseConfig, {
       globDirectory: './build/',
       globPatterns: ['**/*.{html,js,css}'],
       swDest: './build/service-worker.js'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(process.cwd(),'./src/circleci/config.yml'),
+        to: '.circleci/config.yml',
+        toType: 'dir'
+      },
+    ])
   ],
-
 });
