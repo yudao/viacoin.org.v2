@@ -31,8 +31,7 @@ export default class Sidebar extends preact.Component {
     if (e.target.parentElement.tagName == "A") {
       item = e.target.parentElement;
     }
-    console.log(item);
-
+    
     if (item.href) {
       currentActiveClass = "";
     }
