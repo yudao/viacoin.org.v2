@@ -12,8 +12,6 @@ import Team from 'components/layout/team/section';
 import Resources from 'components/layout/resources/section';
 import Footer from 'components/layout/footer/section';
 import Sidebar from 'components/nav/side';
-import Hamburger from 'components/icons/hamburger';
-import Ribbon from 'components/ribbon/ribbon';
 
 import './app.sass'
 import './bg-blue-space.jpg'
@@ -75,18 +73,28 @@ export default class App extends preact.Component {
     return <section class="app">
       <Particles />
       <Sidebar />
-      <Ribbon classes="top-right sticky shadow">
-        <a href="https://github.com/viacoin/documents/tree/master/whitepapers" target="_blank">WhitePaper</a>
-      </Ribbon>
+      <a id="home"></a>
       <Intro config={state.config} />
+      <a id="features"></a>
       <Features config={state.config.features} />
+      <a id="roadmap"></a>
       <Roadmap config={state.config.roadmap} />
+      <a id="wallets"></a>
       <Wallet config={state.config.wallets} />
+      <a id="team"></a>
       <Team config={state.config.team} />
+      <a id="resources"></a>
       <Resources config={state.config.resources} />
+      <a id="contact"></a>
       <Footer config={state.config.donate} />
     </section>;
   }
 }
 
-//      <Hamburger />
+/*
+import Ribbon from 'components/ribbon/ribbon';
+<Ribbon classes="top-right sticky shadow">
+  <a href="https://github.com/viacoin/documents/tree/master/whitepapers" target="_blank">WhitePaper</a>
+</Ribbon>
+*/
+//
