@@ -19,7 +19,8 @@
     "numbro": "^2.0.6",
     "particles.js": "^2.0.0",
     "preact": "^8.2.9",
-    "svg-gauge": "^1.0.4"
+    "svg-gauge": "^1.0.4",
+    "universal-ga": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",

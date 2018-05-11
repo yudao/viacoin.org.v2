@@ -1,6 +1,7 @@
 import preact from 'preact';
 import AOS from 'aos/dist/aos';
 import numbro from 'numbro';
+import analytics from 'universal-ga';
 
 import SplashScreen from 'components/splash/screen';
 import Particles from 'components/particles/background';
@@ -66,6 +67,10 @@ export default class App extends preact.Component {
   componentDidMount() {
     this.config();
     AOS.init();
+    if(process.env.NODE_ENV != 'development') {
+      analytics.initialize('UA-119053871-1');
+      analytics.pageview('/');
+    }
   }
 
   render(props, state) {
