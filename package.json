@@ -19,6 +19,7 @@
     "numbro": "^2.0.6",
     "particles.js": "^2.0.0",
     "preact": "^8.2.9",
+    "superagent": "^3.8.3",
     "svg-gauge": "^1.0.4",
     "universal-ga": "^1.2.0"
   },
