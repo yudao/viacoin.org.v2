@@ -12,7 +12,6 @@
 @import "../node_modules/bulma/sass/components/navbar"
 @import "../node_modules/bulma/sass/components/card"
 @import "../node_modules/bulma/sass/components/modal"
-@import "../node_modules/bulma/sass/components/menu"
 
 @import "../node_modules/hamburgers/_sass/hamburgers/hamburgers"
 
@@ -32,6 +31,10 @@ body
 
 p
   font-family: $family-common
+
+.app
+  section
+    @include transition(all 300ms ease-in-out)
 
 .columns
   +mobile

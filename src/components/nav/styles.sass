@@ -1,15 +1,59 @@
-.menu
+aside
   +mobile
-    width: 50%
-    right: -50%
+    transform: translateY(-80rem)
+  &.is-open
+    transform: translateY(0)
+  background: $background
   position: fixed
-  right: -25%
-  min-height: 100vh
-  width: 25%
-  z-index: 39
-  padding: 10rem 0 2rem 2rem
-  background: $white
-  transition: all 650ms ease-in-out
+  width: 100%
+  z-index: 5
+  transform: translateY(-20rem)
+  @include transition(all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1))
+
+  a
+    &:hover *
+      color: $grey-light
+      fill: $grey-light
+    color: $white
+    letter-spacing: .1rem
+
+  .is-social
+    +mobile
+      text-align: center
+      padding: 2rem 0
+      li
+        display: inline
+        padding: 1rem
+    margin: 0
+    padding: 1.5rem 0 0 2rem
+    svg
+      width: 1.2rem
+
+  svg
+    width: 60px
+    fill: $white
+    padding-bottom: 1rem
+
+  .column
+    +mobile
+      margin: 0
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+      border-right: 0
+    &:nth-of-type(3)
+      +mobile
+        text-align: center
+        padding-left: 0
+      padding-left: 5rem
+    &:last-child
+      border: 0
+    margin: 4rem 0
+    border-right: 1px solid rgba(255, 255, 255, 0.2)
+
+  .subtitle,
+  .subtitle:not(:last-child)
+    margin: 0
+    text-transform: uppercase
+    color: $white-ter
 
 
 .navbar-brand
