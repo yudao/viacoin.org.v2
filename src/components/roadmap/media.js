@@ -49,16 +49,27 @@ export default class RoadmapMedia extends preact.Component {
     const colorClass = this.notificationColor(progress)
 
     return <article class="columns is-vcentered" data-aos="fade-up" data-aos-easing="ease" data-aos-anchor-placement="bottom-bottom">
-      <div class="column is-narrow">
+      <div class="column is-narrow is-hidden-mobile">
         <GaugeCircular value={ state.start } classes={ colorClass } />
       </div>
-      <div class="column is-1 is-narrow">
+      <div class="column is-1 is-narrow is-hidden-mobile">
         <hr class={colorClass} />
       </div>
-      <div class="column is-5">
+      <div class="column is-5 is-hidden-mobile">
         <p class="heading">{ title }</p>
         <p>{ text }</p>
         { icons }
+      </div>
+      <div class="column is-5 is-hidden-desktop">
+        <p class="heading">{ title }</p>
+        <p>{ text }</p>
+        { icons }
+      </div>
+      <div class="column is-narrow is-hidden-desktop">
+        <GaugeCircular value={ state.start } classes={ colorClass } />
+      </div>
+      <div class="column is-1 is-narrow is-hidden-desktop">
+        <hr class={colorClass} />
       </div>
     </article>
   }
