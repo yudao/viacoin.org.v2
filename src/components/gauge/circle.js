@@ -4,8 +4,6 @@ import Gauge from "svg-gauge";
 
 import "./circle.sass"
 
-// const Config = require('Config');
-
 /** @jsx preact.h */
 
 const defaultOptions = {
@@ -21,7 +19,12 @@ const defaultOptions = {
 
 export default class GaugeCircle extends preact.Component {
   componentDidMount() {
+    const isFirefox = typeof InstallTrigger !== 'undefined';
     this.renderGauge(this.props);
+    // Firefox hack to replace letter-spacing on svg text
+    if (isFirefox) {
+      this.base.querySelector(".value-text").setAttribute("textLength", 60)
+    }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
