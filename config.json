@@ -107,6 +107,12 @@
 				"title": "Trezor",
 				"url": "https://trezor.io/",
 				"button": "Buy"
+			},
+			{
+				"icon": "PungoIcon",
+				"title": "Pungo Wallet",
+				"url": "https://pungo.app/",
+				"button": "Download"
 			}
 		]
 	},
