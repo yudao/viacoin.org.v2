@@ -368,6 +368,12 @@
 				"url": "http://www.barterdex.com/",
 				"delay": 700,
 				"styles": "height: 35px;"
+			},
+			{
+				"picture": "resources/peer2cash.png",
+				"url": "https://peer2.cash",
+				"delay": 800,
+				"styles": "height: 35px;"
 			}
 		],
 		"services": [
